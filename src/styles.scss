@@ -1,4 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~font-awesome/css/font-awesome.css';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "./app/shared/grid";
 @import "./app/shared/colors";
 $font-family: 'Roboto', Helvetica, sans-serif;
@@ -41,4 +44,8 @@ select {
 
 button {
   cursor: pointer;
+}
+
+md-toolbar-row {
+  justify-content: space-between;
 }

@@ -1,34 +1,21 @@
-<div class="main-container">
-  <div class="container">
-    <div class="row">
-      <div class="col-3">
-        <div class="filters-wrapper">
-          <filters #filtersComponent [categories]='originalData.categories' [customFilters]='customFilters' [priceFilters]='priceFilters'
-            (onFilterChange)='onFilterChange($event)'></filters>
-        </div>
+<div class="row">
+  <div class="col-mat-9 field-label-responsive">
+    <div class="col-8">
+      <div class="sort-filters-wrapper">
+        <sort-filters [filters]='sortFilters' (onSortChange)='sortProducts($event)'></sort-filters>
       </div>
-      <div class="col-9">
-        <div class="row">
-          <div class="col-8">
-            <div class="sort-filters-wrapper">
-              <sort-filters [filters]='sortFilters' (onSortChange)='sortProducts($event)'></sort-filters>
-            </div>
-          </div>
-          <div class="col-4">
-            <search-bar #searchComponent (onSearchChange)='onSearchChange($event)'></search-bar>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-12">
-
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-12">
-            <showcase [products]='products'></showcase>
-          </div>
-        </div>
+    </div>
+    <div class="col-4">
+      <search-bar #searchComponent (onSearchChange)='onSearchChange($event)'></search-bar>
+    </div>
+    <div class="col-3">
+      <div class="filters-wrapper">
+        <filters #filtersComponent [categories]='originalData.categories' [customFilters]='customFilters' [priceFilters]='priceFilters'
+          (onFilterChange)='onFilterChange($event)'></filters>
       </div>
+    </div>
+    <div class="col-9">
+      <showcase [products]='products'></showcase>
     </div>
   </div>
 </div>

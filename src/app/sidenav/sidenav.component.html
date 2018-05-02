@@ -1,0 +1,48 @@
+<mat-sidenav-container fullscreen>
+  <mat-toolbar color="angular_whiteTransparent">
+    <span>
+      <img src="assets/penquin.png" class="angular-logo"> Penquin Matrimony Services
+    </span>
+    <span class="fill-remaining-space"></span>
+    <button mat-button routerLink="login">Login</button>
+    <button mat-button (click)="onLogout()">Logout</button>
+  </mat-toolbar>
+  <mat-sidenav #sidenav mode="side" class="example-sidenav" [ngStyle]="{ 'width.em': sidenavWidth }" opened="true" (mouseenter)="increase()"
+    (mouseleave)="decrease()">
+    <mat-nav-list>
+      <mat-list-item routerLink="dashboard" routerLinkActive="active">
+        <mat-icon mat-list-icon>home</mat-icon>
+        <div fxFlex="10"></div>
+        <div *ngIf="sidenavWidth > 6" class="sidenav-item">
+          <h5>Dashboard</h5>
+        </div>
+      </mat-list-item>
+
+      <mat-list-item routerLink="matches" routerLinkActive="active">
+        <mat-icon mat-list-icon>face</mat-icon>
+        <div fxFlex="10"></div>
+        <div *ngIf="sidenavWidth > 6" class="sidenav-item">
+          <h5>Matches</h5>
+        </div>
+      </mat-list-item>
+
+      <mat-list-item routerLink="communications" routerLinkActive="active">
+        <mat-icon mat-list-icon>mail</mat-icon>
+        <div fxFlex="10"></div>
+        <div *ngIf="sidenavWidth > 6" class="sidenav-item">
+          <h5>Communications</h5>
+        </div>
+      </mat-list-item>
+
+      <mat-list-item routerLink="partner" routerLinkActive="active">
+        <mat-icon mat-list-icon>link</mat-icon>
+        <div fxFlex="10"></div>
+        <div *ngIf="sidenavWidth > 6" class="sidenav-item">
+          <h5>Profile</h5>
+        </div>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+  <router-outlet></router-outlet>
+
+</mat-sidenav-container>

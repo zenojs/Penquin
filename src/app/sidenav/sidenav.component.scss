@@ -1,0 +1,22 @@
+.sidenav-content {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sidenav {
+    background-color: #0747A6;
+  }
+  .active{
+    background-color:rgba(9, 30, 66, 0.25);
+  }
+
+  .sidenav-item{
+      color: black;
+      font-size:20px; 
+  }
+
+  md-icon{
+    color: white;
+}

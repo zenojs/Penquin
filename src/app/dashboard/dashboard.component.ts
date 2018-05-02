@@ -1,7 +1,9 @@
+import { Router } from '@angular/router';
+import { LoginService } from './../_services/login.services';
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../shared/product.model';
-import { DataService } from '../data.service';
-import { CartService } from '../cart.service';
+import { DataService } from '../_services/data.service';
+import { CartService } from '../_services/cart.service';
 import { AfterViewInit, ViewChild } from '@angular/core';
 
 import { FiltersComponent } from '../filters/filters.component';
@@ -48,9 +50,13 @@ export class DashboardComponent implements OnInit {
 
   originalData: any = []
 
-  constructor(private dataService: DataService, private cartService: CartService) { }
+  constructor(private router: Router, private loginService: LoginService, private dataService: DataService, private cartService: CartService) { }
 
   ngOnInit() {
+    let user = this.loginService.status();
+    console.log(user);
+    if (user == null) return this.router.navigate(['/login']);
+
     this.dataService.getData().then(data => {
       this.originalData = data
       this.mainFilter = {
