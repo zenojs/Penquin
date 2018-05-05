@@ -1,199 +1,56 @@
-<form class="form-horizontal" role="form" method="POST" action="/register">
-  <div class="row">
-    <div class="col-mat-3"></div>
-    <div class="col-mat-6">
-      <h2>Register New User</h2>
-      <hr>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-mat-3 field-label-responsive">
-      <label for="name">Name</label>
-    </div>
-    <div class="col-mat-6">
-      <div class="form-group">
-        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-          <div class="input-group-addon" style="width: 2.6rem">
-            <i class="fa fa-user"></i>
-          </div>
-          <input type="text" name="name" class="form-control" id="name" placeholder="John Doe" required autofocus>
-        </div>
-      </div>
-    </div>
-    <div class="col-mat-3">
-      <div class="form-control-feedback">
-        <span class="text-danger align-middle">
-          <!-- Put name validation error messages here -->
-        </span>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-mat-3 field-label-responsive">
-      <label for="email">E-Mail Address</label>
-    </div>
-    <div class="col-mat-6">
-      <div class="form-group">
-        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-          <div class="input-group-addon" style="width: 2.6rem">
-            <i class="fa fa-at"></i>
-          </div>
-          <input type="text" name="email" class="form-control" id="email" placeholder="you@example.com" required autofocus>
-        </div>
-      </div>
-    </div>
-    <div class="col-mat-3">
-      <div class="form-control-feedback">
-        <span class="text-danger align-middle">
-          <!-- Put e-mail validation error messages here -->
-        </span>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-mat-3 field-label-responsive">
-      <label for="password">Password</label>
-    </div>
-    <div class="col-mat-6">
-      <div class="form-group has-danger">
-        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-          <div class="input-group-addon" style="width: 2.6rem">
-            <i class="fa fa-key"></i>
-          </div>
-          <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
-        </div>
-      </div>
-    </div>
-    <div class="col-mat-3">
-      <div class="form-control-feedback">
-        <span class="text-danger align-middle">
-          <i class="fa fa-close"> Example Error Message</i>
-        </span>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-mat-3 field-label-responsive">
-      <label for="password">Confirm Password</label>
-    </div>
-    <div class="col-mat-6">
-      <div class="form-group">
-        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-          <div class="input-group-addon" style="width: 2.6rem">
-            <i class="fa fa-repeat"></i>
-          </div>
-          <input type="password" name="password-confirmation" class="form-control" id="password-confirm" placeholder="Password" required>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-mat-3 field-label-responsive">
-      <label for="dateofbirth">Date of Birth</label>
-    </div>
-    <div class="col-mat-6">
-      <div class="form-group">
-        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-          <div class="input-group-addon" style="width: 2.6rem">
-            <i class="fa fa-repeat"></i>
-          </div>
-          <input type="dateofbirth" name="date-of-birth" class="form-control" id="date-of-birth" placeholder="dateofbirth" required>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-mat-3 field-label-responsive">
-      <label for="education">Education</label>
-    </div>
-    <div class="col-mat-6">
-      <div class="form-group">
-        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-          <div class="input-group-addon" style="width: 2.6rem">
-            <i class="fa fa-at"></i>
-          </div>
-          <input type="text" name="education" class="form-control" id="education" placeholder="Highest education" required autofocus>
-        </div>
-      </div>
-    </div>
-    <div class="col-mat-3">
-      <div class="form-control-feedback">
-        <span class="text-danger align-middle">
-        </span>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-mat-3 field-label-responsive">
-      <label for="salary">Salary</label>
-    </div>
-    <div class="col-mat-6">
-      <div class="form-group">
-        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-          <div class="input-group-addon" style="width: 2.6rem">
-            <i class="fa fa-user"></i>
-          </div>
-          <input type="text" name="salary" class="form-control" id="salary" placeholder="In Lakhs" required autofocus>
-        </div>
-      </div>
-    </div>
-    <div class="col-mat-3">
-      <div class="form-control-feedback">
-        <span class="text-danger align-middle">
-          <!-- Put name validation error messages here -->
-        </span>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-mat-3 field-label-responsive">
-      <label for="myself">About Myself</label>
-    </div>
-    <div class="col-mat-6">
-      <div class="form-group">
-        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-          <div class="input-group-addon" style="width: 2.6rem">
-            <i class="fa fa-user"></i>
-          </div>
-          <textarea name="myself" id="myself" cols="46" rows="3" placeholder="..." required autofocus></textarea>
-        </div>
-      </div>
-    </div>
-    <div class="col-mat-3">
-      <div class="form-control-feedback">
-        <span class="text-danger align-middle">
-          <!-- Put name validation error messages here -->
-        </span>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-mat-3 field-label-responsive">
-      <label for="uploadphoto">Upload Photos</label>
-    </div>
-    <div class="col-mat-6">
-      <div class="form-group">
-        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-          <div class="input-group-addon" style="width: 2.6rem">
-            <i class="fa fa-at"></i>
-          </div>
-          <input type="file" class="form-control-file" id="uploadphoto">
-        </div>
-      </div>
-    </div>
-    <div class="col-mat-3">
-      <div class="form-control-feedback">
-        <span class="text-danger align-middle">
-          <!-- Put e-mail validation error messages here -->
-        </span>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-mat-3"></div>
-    <div class="col-mat-6">
-      <button type="submit" class="btn btn-success">
-        <i class="fa fa-user-plus"></i> Register</button>
-    </div>
-  </div>
-</form>
+<mat-card class="example-full-width">
+  <mat-card-title class="example-full-width">Register New User</mat-card-title>
+  <mat-card-content>
+    <form class="form-horizontal" role="form" method="POST" [formGroup]="formGroup">
+      <mat-dialog-content>
+        <mat-form-field class="example-full-width">
+          <mat-icon matSuffix>verified_user</mat-icon>
+          <input matInput placeholder="Full Name" [formControl]="name" required>
+          <mat-error *ngIf="name.invalid">{{getErrorMessage('name')}}</mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-icon matSuffix>phone</mat-icon>
+          <input matInput placeholder="Mobile" [formControl]="mobile" required>
+          <mat-error *ngIf="mobile.invalid">{{getErrorMessage('mobile')}}</mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-icon matSuffix>face</mat-icon>
+          <mat-select placeholder="Gender" [formControl]="gender" required>
+            <mat-option value="MALE"> MALE</mat-option>
+            <mat-option value="FEMALE"> FEMALE</mat-option>
+          </mat-select>
+          <mat-error *ngIf="gender.invalid">{{getErrorMessage('gender')}}</mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-icon matSuffix>email</mat-icon>
+          <input matInput placeholder="Enter your email" [formControl]="email" required>
+          <mat-error *ngIf="email.invalid">{{getErrorMessage('email')}}</mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-icon matSuffix>remove_red_eye</mat-icon>
+          <input type="password" matInput placeholder="Password" [formControl]="password" required>
+          <mat-error *ngIf="password.invalid">{{getErrorMessage('password')}}</mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-icon matSuffix>remove_red_eye</mat-icon>
+          <input type="password" matInput placeholder="Confirm Password" [formControl]="confirmPassword" required>
+          <mat-error *ngIf="confirmPassword.invalid">{{getErrorMessage('confirmPassword')}}</mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <!-- <input matInput [matDatepicker]="dateofbirth" placeholder="Start Date" [(ngModel)]="dateofbirth" required> -->
+
+          <input matInput [matDatepicker]="dateofbirth" placeholder="Date of Birth" formControlName="dateofbirth">
+          <mat-datepicker-toggle matSuffix [for]="dateofbirth"></mat-datepicker-toggle>
+          <mat-datepicker #dateofbirth></mat-datepicker>
+          <mat-error *ngIf="dateofbirth.invalid">{{getErrorMessage('dateofbirth')}}</mat-error>
+        </mat-form-field>
+      </mat-dialog-content>
+      <mat-dialog-actions class="example-full-width">
+        <button [disabled]="loading" class="mat-raised-button mat-primary" (click)="save()"> Register </button>
+        <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="
+        />
+        <button class="mat-raised-button" (click)="close()"> Close </button>
+      </mat-dialog-actions>
+    </form>
+  </mat-card-content>
+</mat-card>

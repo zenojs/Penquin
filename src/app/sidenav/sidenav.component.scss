@@ -20,3 +20,19 @@
   md-icon{
     color: white;
 }
+
+.demo-toolbar {
+  padding: 6px;
+
+  .demo-toolbar-icon {
+    padding: 0 14px;
+  }
+
+  .demo-fill-remaining {
+    flex: 1 1 auto;
+  }
+
+  button {
+    margin: 0 4px;
+  }
+}

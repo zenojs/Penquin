@@ -1,10 +1,11 @@
 <mat-sidenav-container fullscreen>
-  <mat-toolbar color="angular_whiteTransparent">
+   <mat-toolbar color="angular_whiteTransparent">
     <span>
       <img src="assets/penquin.png" class="angular-logo"> Penquin Matrimony Services
     </span>
     <span class="fill-remaining-space"></span>
     <button mat-button routerLink="login">Login</button>
+    <button mat-button routerLink="partner">Register</button>
     <button mat-button (click)="onLogout()">Logout</button>
   </mat-toolbar>
   <mat-sidenav #sidenav mode="side" class="example-sidenav" [ngStyle]="{ 'width.em': sidenavWidth }" opened="true" (mouseenter)="increase()"
