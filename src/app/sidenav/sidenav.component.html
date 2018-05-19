@@ -1,16 +1,7 @@
-<mat-sidenav-container fullscreen>
-   <mat-toolbar color="angular_whiteTransparent">
-    <span>
-      <img src="assets/penquin.png" class="angular-logo"> Penquin Matrimony Services
-    </span>
-    <span class="fill-remaining-space"></span>
-    <button mat-button routerLink="login">Login</button>
-    <button mat-button routerLink="partner">Register</button>
-    <button mat-button (click)="onLogout()">Logout</button>
-  </mat-toolbar>
+<mat-sidenav-container style="position: fixed;top: 64px;bottom: 0;left: 0;padding: 0; width: 100%;background-color: #fafafa;box-shadow: 6px 0 6px rgba(0,0,0,.1);">
   <mat-sidenav #sidenav mode="side" class="example-sidenav" [ngStyle]="{ 'width.em': sidenavWidth }" opened="true" (mouseenter)="increase()"
     (mouseleave)="decrease()">
-    <mat-nav-list>
+    <mat-nav-list style="padding-top: 0px;">
       <mat-list-item routerLink="dashboard" routerLinkActive="active">
         <mat-icon mat-list-icon>home</mat-icon>
         <div fxFlex="10"></div>
@@ -35,11 +26,18 @@
         </div>
       </mat-list-item>
 
-      <mat-list-item routerLink="partner" routerLinkActive="active">
+      <mat-list-item *ngIf="!_authService.loggedIn()" routerLink="partner" routerLinkActive="active">
         <mat-icon mat-list-icon>link</mat-icon>
         <div fxFlex="10"></div>
         <div *ngIf="sidenavWidth > 6" class="sidenav-item">
           <h5>Profile</h5>
+        </div>
+      </mat-list-item>
+      <mat-list-item *ngIf="_authService.loggedIn()" routerLink="editprofile" routerLinkActive="active">
+        <mat-icon mat-list-icon>link</mat-icon>
+        <div fxFlex="10"></div>
+        <div *ngIf="sidenavWidth > 6" class="sidenav-item">
+          <h5>Edit Profile</h5>
         </div>
       </mat-list-item>
     </mat-nav-list>
@@ -47,3 +45,14 @@
   <router-outlet></router-outlet>
 
 </mat-sidenav-container>
+<mat-toolbar style="position:fixed;box-shadow: 0 2px 5px 0 rgba(0,0,0,.3);" color="toolbar">
+  <span>
+    <img src="assets/penquin.png" class="angular-logo"> Penquin Matrimony Services
+  </span>
+  <span class="fill-remaining-space"></span>
+  <div class="search-container">
+    <button mat-button *ngIf="!_authService.loggedIn()" routerLink="login">Login</button>
+    <button mat-button *ngIf="!_authService.loggedIn()" routerLink="partner">Register</button>
+    <button mat-button *ngIf="_authService.loggedIn()" (click)="onLogout()">Logout</button>
+  </div>
+</mat-toolbar>

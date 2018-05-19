@@ -1,3 +1,4 @@
+import { AuthService } from './../_services/auth.service';
 import { Router } from '@angular/router';
 import { LoginService } from './../_services/login.services';
 import { Component, OnInit } from '@angular/core';
@@ -50,26 +51,38 @@ export class DashboardComponent implements OnInit {
 
   originalData: any = []
 
-  constructor(private router: Router, private loginService: LoginService, private dataService: DataService, private cartService: CartService) { }
+  constructor(private router: Router, private authService: AuthService, private loginService: LoginService, private dataService: DataService, private cartService: CartService) { }
 
   ngOnInit() {
-    let user = this.loginService.status();
-    console.log(user);
-    if (user == null) return this.router.navigate(['/login']);
+    if (!this.authService.loggedIn()) return this.router.navigate(['/login']);
 
-    this.dataService.getData().then(data => {
-      this.originalData = data
-      this.mainFilter = {
-        search: '',
-        categories: this.originalData.categories.slice(0),
-        customFilter: this.customFilters[0],
-        priceFilter: this.priceFilters[0]
-      }
+    this.loginService.getDashboardData().subscribe(data => {
+      this.originalData = data;
+      // this.mainFilter = {
+      //   search: '',
+      //   categories: this.originalData.categories.slice(0),
+      //   customFilter: this.customFilters[0],
+      //   priceFilter: this.priceFilters[0] 
+      // }
 
       //Make a deep copy of the original data to keep it immutable
-      this.products = this.originalData.products.slice(0)
-      this.sortProducts('name')
-    })
+      this.products = this.originalData.slice(0)
+      //this.sortProducts('name')
+    }) 
+
+    // this.dataService.getData().then(data => {
+    //   this.originalData = data
+    //   this.mainFilter = {
+    //     search: '',
+    //     categories: this.originalData.categories.slice(0),
+    //     customFilter: this.customFilters[0],
+    //     priceFilter: this.priceFilters[0]
+    //   }
+
+    //   //Make a deep copy of the original data to keep it immutable
+    //   this.products = this.originalData.products.slice(0)
+    //   this.sortProducts('name')
+    // })
   }
 
   onURLChange(url) {

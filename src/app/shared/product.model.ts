@@ -1,10 +1,12 @@
 export class Product{
-  id: number
-  name: string
-  price: string
-  available: boolean
-  best_seller: boolean
-  categories: number[]
-  img: string
-  description: string
+  userid: String
+  name: String 
+  gender: String
+  dateofbirth: String 
+  email: String
+  mobile: Number 
+  password: String  
+  thumbnailurl: String
+  isauthorized: Boolean
+  price:String
 }

@@ -1,3 +1,4 @@
+import { EditProfileComponent } from './../edit-profile/edit-profile.component';
 import { LoginComponent } from './../login/login.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'matches', component: MatchesComponent, },
   { path: 'communications', component: CommunicationsComponent, },
   { path: 'login', component: LoginComponent, },
+  { path: 'editprofile', component: EditProfileComponent, },
 ];
 
 @NgModule({

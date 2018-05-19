@@ -1,3 +1,4 @@
+import { AuthService } from './../_services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 export class SidenavComponent implements OnInit {
   sidenavWidth = 4;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private _authService: AuthService) { }
 
   ngOnInit() {
   }
@@ -26,6 +27,7 @@ export class SidenavComponent implements OnInit {
   }
 
   onLogout() {
+    this._authService.removeToken();
     this.router.navigate(['/login'])
   }
 }

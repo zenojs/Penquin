@@ -1,3 +1,4 @@
+import { AuthService } from './_services/auth.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -15,21 +16,26 @@ import { ProductThumbnailComponent } from './product-thumbnail/product-thumbnail
 import { PartnerComponent } from './partner/partner.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { LoginComponent } from './login/login.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { UploadPhotosComponent } from './upload-photos/upload-photos.component';
 
 import { LoginService } from './_services/login.services';
 import { StoreService } from './_services/store.service';
 import { DataService } from './_services/data.service';
 import { CartService } from './_services/cart.service';
+import { TokenInterceptorService } from './_services/token-interceptor.service';
 
 import { MaterialModule } from './material.module';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpInterceptor, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { Component, Inject, OnInit, ViewEncapsulation } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material";
 import { FormBuilder, Validators, FormGroup } from "@angular/forms";
+import { importType } from '@angular/compiler/src/output/output_ast'
+import { ImageCropperModule } from 'ngx-image-cropper';
 
 @NgModule({
   declarations: [
@@ -45,6 +51,8 @@ import { FormBuilder, Validators, FormGroup } from "@angular/forms";
     PartnerComponent,
     SidenavComponent,
     LoginComponent,
+    EditProfileComponent,
+    UploadPhotosComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,9 +66,19 @@ import { FormBuilder, Validators, FormGroup } from "@angular/forms";
     ReactiveFormsModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
+    ImageCropperModule
   ],
-  providers: [StoreService, DataService, CartService, LoginService],
+  providers: [StoreService, DataService, CartService, LoginService, AuthService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true
+    }
+  ],
+  entryComponents: [
+      UploadPhotosComponent
+  ],  
   bootstrap: [AppComponent]
 })
 export class AppModule { }

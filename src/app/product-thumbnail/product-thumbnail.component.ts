@@ -1,3 +1,4 @@
+import { DataService } from './../_services/data.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { Product } from '../shared/product.model';
 import { CartService } from '../_services/cart.service';
@@ -12,20 +13,23 @@ export class ProductThumbnailComponent implements OnInit {
 
   detailViewActive: boolean
 
-  constructor(private cartService: CartService) {
+  constructor(private cartService: CartService, private dataService: DataService) {
 
   }
 
   ngOnInit() {
     this.detailViewActive = false
+    this.dataService.getPartnersData().map(data=> {
+      console.log(data);
+      this.product = data;
+    });
   }
 
-  onProductClick(){
+  onProductClick() {
     this.detailViewActive = !this.detailViewActive
   }
 
-  onAddToCart(){
+  onAddToCart() {
     this.cartService.addProductToCart(this.product)
   }
-
 }

@@ -1,23 +1,23 @@
-<div class="wrapper" [class.unavailable]='!product.available'>
+<div class="wrapper" [class.unavailable]='!product.isauthorized'>
   <div class="info">
     <div class="img-wrapper">
-      <img class="img" [src]='product.img'>
+      <img class="img" [src]='product.thumbnailurl'>
     </div>
     <div class="details">
-      <div class="available" *ngIf='product.available'>
+      <div class="available" *ngIf='product.isauthorized'>
         <hr>
         <div>
           <div class="col-6-sm view-details-wrapper">
-            <button type="button" class="view" (click)='onProductClick()'>more</button>
+            <button type="button" class="view" (click)='onProductClick()'>{{product.name}}</button>
           </div>
           <div class="">
-            {{product.name}}
+            {{product.dateofbirth  | date : "dd-MM-yyyy"}}
           </div> 
         </div>
       </div>
-      <div class="not-available" *ngIf='!product.available'>
+      <div class="not-available" *ngIf='!product.isauthorized'>
         <hr>
-        <p>Not available</p>
+        <p>Under verification</p>
       </div>
     </div>
     <!--span class="category-name" *ngFor='let category of product.categories'>{{category}}</span-->
@@ -26,8 +26,8 @@
     <div class="bg" [class.shown]='detailViewActive'></div>
     <div class="info-wrapper">
       <p class="d-holder d-title">{{product.name}}</p>
-      <p class="d-holder d-price">$ {{product.price}}</p>
-      <p class="d-holder d-description">{{product.description}}</p>
+      <p class="d-holder d-price">{{product.dateofbirth}}</p>
+      <p class="d-holder d-description">{{product.mobile}}</p>
     </div>
     <button type="button" class="hide-detail-btn" (click)='onProductClick()'>Click to hide</button>
   </div>
